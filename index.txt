@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Rayhan Islam Munna | Graphic Designer Portfolio</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #07070F;
+            color: #F0F3FF;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-padding-top: 80px;
+        }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #111122; }
+        ::-webkit-scrollbar-thumb { background: #FF5E7C; border-radius: 10px; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(7, 7, 15, 0.95);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            padding: 0.9rem 2rem;
+            border-bottom: 1px solid rgba(255, 94, 124, 0.3);
+        }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFB347, #FF5E7C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #ffb347aa;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #eef5ff;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover { color: #FF5E7C; }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #ffb347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Top Banner with Full Name */
+        .hero-banner {
+            background: linear-gradient(95deg, #FF5E7C22, #FFB34722);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 65px;
+            border-bottom: 2px solid #FFB347;
+        }
+        .hero-banner h1 {
+            font-size: clamp(1.6rem, 5vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .hero-banner .designation {
+            font-size: 0.9rem;
+            color: #FFB347;
+            margin-top: 0.3rem;
+        }
+
+        /* Hero Section with Photo */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .gradient-text {
+            background: linear-gradient(120deg, #FFB347, #FF5E7C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cbd5ff;
+            margin: 1rem 0;
+        }
+        .hero-photo {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+        .photo-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 30% 70% 65% 35% / 40% 45% 55% 60%;
+            background: linear-gradient(145deg, #FF5E7C, #FFB347);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-frame i {
+            font-size: 5rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #FF5E7C, #FFB347);
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #0A0A12;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #FF5E7C;
+            padding: 0.65rem 1.7rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #FFB347;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-outline:hover { background: #FF5E7C20; }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .portfolio-card {
+            background: rgba(20, 20, 35, 0.7);
+            border-radius: 1.8rem;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(255,94,124,0.2);
+        }
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: #FF5E7C;
+        }
+        .portfolio-img {
+            height: 220px;
+            background: #1A1A2A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .portfolio-img i {
+            font-size: 3.5rem;
+            color: #FFB347;
+        }
+        .portfolio-info {
+            padding: 1.3rem;
+        }
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: rgba(15, 15, 28, 0.7);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid rgba(255,179,71,0.2);
+            transition: 0.2s;
+        }
+        .service-card:hover { border-color: #FFB347; transform: translateY(-5px); }
+        .service-card i { font-size: 2.5rem; color: #FFB347; margin-bottom: 1rem; }
+
+        /* Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .article-card {
+            background: #0F0F1C;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            border-left: 4px solid #FF5E7C;
+        }
+        .article-card i { font-size: 1.8rem; color: #FFB347; margin-bottom: 0.8rem; }
+
+        /* Contact */
+        .contact-wrapper {
+            background: rgba(20, 20, 40, 0.5);
+            border-radius: 2rem;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .contact-item {
+            background: #111122;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: 0.2s;
+            border: 1px solid #2c2c42;
+        }
+        .contact-item i { font-size: 1.6rem; color: #FFB347; display: block; margin-bottom: 0.4rem; }
+        .contact-item a {
+            color: #eef5ff;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+        .contact-item:hover { background: #FF5E7C20; border-color: #FFB347; }
+        input, textarea {
+            width: 100%;
+            background: #11111f;
+            border: 1px solid #2c2c42;
+            padding: 0.8rem 1rem;
+            border-radius: 30px;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1.8rem;
+            border-top: 1px solid #222;
+            font-size: 0.75rem;
+            color: #8892B0;
+        }
+        @media (max-width: 850px) {
+            .hero-section { flex-direction: column-reverse; text-align: center; }
+            .btn-group { justify-content: center; }
+            .section { padding: 3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo"><h2>Rayhan Islam</h2><p>GRAPHIC DESIGNER</p></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- TOP HEADING WITH FULL NAME -->
+<div class="hero-banner">
+    <h1>Rayhan Islam Munna</h1>
+    <div class="designation">Graphic Designer & Visual Storyteller</div>
+</div>
+
+<main>
+    <!-- HOME SECTION with PERSONAL PHOTO AREA -->
+    <section id="home">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>Crafting <span class="gradient-text">Visual Identities</span> That Speak</h2>
+                <p>I'm Rayhan Islam Munna, a passionate graphic designer with over 6 years of experience in branding, digital illustration, and print media. I help businesses stand out through bold aesthetics and meaningful design.</p>
+                <div class="btn-group">
+                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn-outline">Let's Talk</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <div class="photo-frame" id="personalPhotoFrame">
+                    <!-- Personal photo will be placed here. Admin can replace image URL -->
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section">
+        <h2 class="section-title">What I Do</h2>
+        <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <!-- ARTICLES SECTION -->
+    <section id="articles" class="section">
+        <h2 class="section-title">Design Insights</h2>
+        <div class="articles-grid" id="articlesGrid"></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h2 class="section-title" style="text-align: center;">Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-methods" id="contactMethods"></div>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="3" placeholder="Tell me about your project..."></textarea>
+                <button type="submit" class="btn-primary" style="width:100%;">Send Message</button>
+                <p id="formFeedback" style="margin-top: 0.8rem; font-size:0.75rem; text-align:center;"></p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Rayhan Islam Munna — All rights reserved.</p>
+</footer>
+
+<script>
+    // ========================
+    // PROFESSIONAL PORTFOLIO DATA - Fully customizable, no backend messages visible to visitors
+    // Admin can edit these arrays/images. Personal photo can be changed via image URL.
+    // ========================
+
+    // Personal Photo URL (admin can replace this with actual image path)
+    // Just change the 'personalPhotoUrl' value to your image link.
+    let personalPhotoUrl = "";  // Leave empty to show icon. Put image URL like "photos/rayhan.jpg"
+
+    // Portfolio Items (icon only - clean & professional)
+    const portfolioData = [
+        { title: "Royal Brand Identity", description: "Complete luxury branding suite including logo, stationery, and packaging.", icon: "crown" },
+        { title: "Neon Pulse Poster", description: "Event poster design with bold typography and neon effects.", icon: "music" },
+        { title: "EcoCharge Campaign", description: "Sustainable energy brand visual ecosystem.", icon: "charging-station" },
+        { title: "Abstract Universe", description: "Album artwork and motion graphics series.", icon: "dice-d6" },
+        { title: "Urban Streetwear", description: "Lookbook design and social media assets.", icon: "store" },
+        { title: "Geometric Series", description: "Minimalist poster collection exploring form and color.", icon: "vector-square" }
+    ];
+
+    // Services Data
+    const servicesData = [
+        { icon: "trademark", name: "Logo & Branding", description: "Unique brand identity, logo design, and complete style guides." },
+        { icon: "print", name: "Print Design", description: "Brochures, posters, packaging, and editorial layouts." },
+        { icon: "mobile-alt", name: "Digital Graphics", description: "Social media visuals, web banners, and UI elements." },
+        { icon: "drafting-compass", name: "Illustration", description: "Custom vector illustrations and digital artwork." }
+    ];
+
+    // Articles Data
+    const articlesData = [
+        { title: "The Psychology of Color in Branding", summary: "How strategic color choices influence perception and drive engagement.", icon: "palette" },
+        { title: "Typography Trends for Modern Design", summary: "Exploring variable fonts and kinetic typography.", icon: "font" },
+        { title: "Why Minimalism Wins", summary: "Case studies on clean design that builds trust and clarity.", icon: "layer-group" }
+    ];
+
+    // Contact Methods (Admin can edit URLs)
+    const contactData = [
+        { platform: "Facebook", url: "https://facebook.com/rayhan.design", icon: "fab fa-facebook", display: "rayhan.design" },
+        { platform: "Instagram", url: "https://instagram.com/rayhan.gfx", icon: "fab fa-instagram", display: "@rayhan.gfx" },
+        { platform: "LinkedIn", url: "https://linkedin.com/in/rayhanmunna", icon: "fab fa-linkedin", display: "Rayhan Munna" },
+        { platform: "Email", url: "mailto:rayhan@design.com", icon: "fas fa-envelope", display: "rayhan@design.com" },
+        { platform: "WhatsApp", url: "https://wa.me/8801712345678", icon: "fab fa-whatsapp", display: "+880 1712 345678" },
+        { platform: "Call", url: "tel:+8801712345678", icon: "fas fa-phone-alt", display: "+880 1712 345678" }
+    ];
+
+    // ========== RENDER FUNCTIONS ==========
+    function renderPersonalPhoto() {
+        const photoFrame = document.getElementById('personalPhotoFrame');
+        if(!photoFrame) return;
+        if(personalPhotoUrl && personalPhotoUrl.trim() !== "") {
+            photoFrame.innerHTML = `<img src="${personalPhotoUrl}" alt="Rayhan Islam Munna">`;
+        } else {
+            photoFrame.innerHTML = `<i class="fas fa-user-astronaut"></i>`;
+        }
+    }
+
+    function renderPortfolio() {
+        const container = document.getElementById('portfolioGrid');
+        if(!container) return;
+        container.innerHTML = portfolioData.map(item => `
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <i class="fas fa-${item.icon}"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderServices() {
+        const container = document.getElementById('servicesGrid');
+        if(!container) return;
+        container.innerHTML = servicesData.map(service => `
+            <div class="service-card">
+                <i class="fas fa-${service.icon}"></i>
+                <h3>${service.name}</h3>
+                <p>${service.description}</p>
+            </div>
+        `).join('');
+    }
+
+    function renderArticles() {
+        const container = document.getElementById('articlesGrid');
+        if(!container) return;
+        container.innerHTML = articlesData.map(article => `
+            <div class="article-card">
+                <i class="fas fa-${article.icon}"></i>
+                <h3>${article.title}</h3>
+                <p>${article.summary}</p>
+            </div>
+        `).join('');
+    }
+
+    function renderContactMethods() {
+        const container = document.getElementById('contactMethods');
+        if(!container) return;
+        container.innerHTML = contactData.map(contact => `
+            <div class="contact-item">
+                <i class="${contact.icon}"></i>
+                <strong>${contact.platform}</strong>
+                <a href="${contact.url}" target="_blank" rel="noopener noreferrer">${contact.display}</a>
+            </div>
+        `).join('');
+    }
+
+    // Contact Form Handler
+    function initContactForm() {
+        const form = document.getElementById('contactForm');
+        if(!form) return;
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const feedback = document.getElementById('formFeedback');
+            feedback.innerHTML = '✓ Message sent. Rayhan will respond within 24 hours.';
+            feedback.style.color = '#FFB347';
+            form.reset();
+            setTimeout(() => feedback.innerHTML = '', 4000);
+        });
+    }
+
+    // Smooth scroll for nav links
+    function initSmoothScroll() {
+        document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if(hash && hash.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    }
+
+    // Load all content
+    function init() {
+        renderPersonalPhoto();
+        renderPortfolio();
+        renderServices();
+        renderArticles();
+        renderContactMethods();
+        initContactForm();
+        initSmoothScroll();
+    }
+
+    init();
+
+    // Optional: Allow admin to dynamically update personal photo via console (for backend integration)
+    window.updatePersonalPhoto = function(imageUrl) {
+        personalPhotoUrl = imageUrl;
+        renderPersonalPhoto();
+    };
+
+    // For backend CMS: expose data updater functions (admin can call these from console or external script)
+    window.updatePortfolio = function(newPortfolio) {
+        portfolioData.length = 0;
+        portfolioData.push(...newPortfolio);
+        renderPortfolio();
+    };
+    window.updateServices = function(newServices) {
+        servicesData.length = 0;
+        servicesData.push(...newServices);
+        renderServices();
+    };
+    window.updateArticles = function(newArticles) {
+        articlesData.length = 0;
+        articlesData.push(...newArticles);
+        renderArticles();
+    };
+    window.updateContacts = function(newContacts) {
+        contactData.length = 0;
+        contactData.push(...newContacts);
+        renderContactMethods();
+    };
+</script>
+</body>
+</html>
