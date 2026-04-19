@@ -447,10 +447,10 @@
 
     // ========== RENDER FUNCTIONS ==========
     function renderPersonalPhoto() {
-        const photoFrame = document.getElementById('https://drive.google.com/file/d/1vq2W17uOqwmf4h_5NX43VUE_O2g_q9FY/view?usp=drivesdk');
+        const photoFrame = document.getElementById('personalPhotoFrame');
         if(!photoFrame) return;
         if(personalPhotoUrl && personalPhotoUrl.trim() !== "") {
-            photoFrame.innerHTML = `<img src="${https://drive.google.com/file/d/1vq2W17uOqwmf4h_5NX43VUE_O2g_q9FY/view?usp=drivesdk}" alt="Rayhan Islam Munna">`;
+            photoFrame.innerHTML = `<img src="${personalPhotoUrl}" alt="Rayhan Islam Munna">`;
         } else {
             photoFrame.innerHTML = `<i class="fas fa-user-astronaut"></i>`;
         }
